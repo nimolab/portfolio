@@ -101,6 +101,24 @@ h1 .q{color:var(--muted); font-weight:400}
 }
 .hero-meta span::before{content:"— "; color:var(--line)}
 
+/* ---------- at a glance ---------- */
+h1 .hl{color:var(--accent-ink)}
+.glance{
+  margin-top:2.8rem; display:grid; grid-template-columns:1fr 1.25fr; gap:1rem;
+  width:min(100% - 2.5rem, var(--wide));
+}
+.g-card{
+  background:var(--surface); border:1px solid var(--line); border-radius:12px;
+  padding:1.4rem 1.5rem; box-shadow:var(--shadow);
+}
+.g-k{font-size:.7rem; letter-spacing:.18em; color:var(--accent-ink); font-weight:600}
+.g-big{font-size:1.12rem; font-weight:700; letter-spacing:-.03em; margin:.35rem 0 .9rem; line-height:1.45}
+.g-big b{color:var(--accent-ink)}
+.g-card ul,.g-card ol{margin:0; padding-left:1.1rem; font-size:.9rem; color:var(--ink-2); line-height:1.7}
+.g-card li + li{margin-top:.35rem}
+.g-card ol li b{color:var(--ink); font-weight:600}
+@media (max-width:760px){ .glance{grid-template-columns:1fr} }
+
 /* ---------- sections ---------- */
 section{padding:4.5rem 0}
 .sec-label{
@@ -270,17 +288,44 @@ footer{border-top:1px solid var(--line); padding:3rem 0 4.5rem}
 
 <div class="hero">
   <div class="wrap">
-    <div class="eyebrow">HR Automation Portfolio</div>
-    <h1>이 일을 사람이<br>매번 해야 하나<span class="q">?</span></h1>
+    <div class="eyebrow">HR × AI Automation Portfolio</div>
+    <h1>반복 업무는 AI에게,<br>사람은 <span class="hl">소통과 기획</span>에</h1>
     <p class="hero-sub">
-      인사 업무를 하며 늘 먼저 묻는 질문입니다. 반복과 규칙이 있는 일은 자동화해 시간을 벌고,
-      그 시간을 채용·온보딩·구성원 경험처럼 <b>사람이 해야 하는 일</b>에 씁니다.
-      아래 여덟 가지는 실제 현업에서 매일·매주·매월 돌아가는 시스템입니다.
+      지금 회사에서 저는 <b>피플팀 업무 대부분을 터미널에서 AI(Claude)와 함께</b> 처리합니다.
+      보고서 작성·서류 발급·설문 발송·이력서 정리 같은 반복·수기 업무는 자동화로 넘기고,
+      저는 <b>사람이 꼭 필요한 일 &mdash; 구성원과의 소통, 제도와 운영의 기획</b>에 시간을 씁니다.
     </p>
     <div class="hero-meta">
       <span>피플팀 인사담당자</span>
       <span>전북대 기계공학과 · 비개발자</span>
       <span>AI 자동화 독학</span>
+    </div>
+  </div>
+
+  <div class="wrap glance" aria-label="한눈에 보기">
+    <div class="g-card">
+      <div class="g-k">만든 것</div>
+      <div class="g-big">현업 운영 중인 자동화 <b>8종</b></div>
+      <ul>
+        <li>주간·월간 인력보고 자동 작성</li>
+        <li>재직·경력증명서 셀프발급 웹앱</li>
+        <li>20개 지점 근무표 자동생성 웹앱</li>
+        <li>노동부 사업체노동력조사 자동작성</li>
+        <li>채용 이력서 자동수집·등록</li>
+        <li>온·오프보딩 설문 자동발송</li>
+        <li>인원현황·조직도 실시간 대시보드</li>
+        <li>이 모두를 지켜보는 AI 업무비서 &lsquo;노바&rsquo;</li>
+      </ul>
+    </div>
+    <div class="g-card">
+      <div class="g-k">할 수 있는 것</div>
+      <div class="g-big">새 조직에서도 그대로 할 수 있는 일</div>
+      <ol>
+        <li><b>반복·수기 업무를 찾아 없앱니다.</b> 매주·매월 손으로 하던 집계·작성·발송을 자동으로 돌아가게 바꿉니다.</li>
+        <li><b>필요한 사내 도구를 직접 만듭니다.</b> 증명서 발급, 근무표, 대시보드처럼 외주 없이 웹앱으로 만들어 운영합니다.</li>
+        <li><b>AI로 운영을 상시 관리합니다.</b> 자동화가 제대로 돌았는지 AI 비서가 확인하고 이상이 있으면 보고합니다.</li>
+        <li><b>사고 나지 않게 설계합니다.</b> 제출·발송·개인정보처럼 되돌리기 어려운 단계는 반드시 사람이 확인합니다.</li>
+      </ol>
     </div>
   </div>
 </div>
@@ -326,6 +371,7 @@ footer{border-top:1px solid var(--line); padding:3rem 0 4.5rem}
     <span class="chip tech">Google Workspace</span>
     <span class="chip tech">Firebase</span>
     <span class="chip tech">Slack / Telegram Bot</span>
+    <span class="chip tech">Claude Code (터미널)</span>
     <span class="chip tech">LLM Agent</span>
     <span class="chip tech">GitHub Actions / launchd</span>
   </div>
