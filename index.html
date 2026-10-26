@@ -68,6 +68,14 @@ a{color:inherit}
 .tb-links{display:flex; gap:1rem; font-family:var(--sans); font-size:.72rem; color:var(--muted)}
 .tb-links a{text-decoration:none}
 .tb-links a:hover{color:var(--accent-ink)}
+.tb-links{align-items:center}
+.tb-pdf{
+  font:inherit; font-weight:600; color:var(--accent-ink); background:var(--accent-soft);
+  border:1px solid color-mix(in srgb, var(--accent) 35%, transparent); border-radius:.25rem;
+  padding:.2rem .6rem; cursor:pointer; white-space:nowrap;
+}
+.tb-pdf:hover{background:var(--accent); color:var(--surface)}
+@media (max-width:560px){ .tb-links a[href^="mailto"], .tb-name span{display:none} .tb-links{gap:.7rem} }
 
 /* ---------- hero ---------- */
 .hero{position:relative; overflow:hidden; padding:5.5rem 0 4rem; border-bottom:1px solid var(--line)}
@@ -282,6 +290,7 @@ footer{border-top:1px solid var(--line); padding:3rem 0 4.5rem}
     <div class="tb-links">
       <a href="tel:01084885167">010-8488-5167</a>
       <a href="mailto:arang51@naver.com">arang51@naver.com</a>
+      <button type="button" class="tb-pdf" id="pdfBtn">PDF 다운로드</button>
     </div>
   </div>
 </header>
@@ -594,6 +603,11 @@ footer{border-top:1px solid var(--line); padding:3rem 0 4.5rem}
   lbClose.addEventListener('click', close);
   lb.addEventListener('click', function(e){ if(e.target===lb) close(); });
   document.addEventListener('keydown', function(e){ if(e.key==='Escape' && !lb.hidden) close(); });
+  document.getElementById('pdfBtn').addEventListener('click', function(){
+    var a=document.createElement('a');
+    a.href='portfolio.pdf'; a.download='장상범-인사자동화-포트폴리오(웹).pdf';
+    document.body.appendChild(a); a.click(); a.remove();
+  });
 })();
 </script>
 
