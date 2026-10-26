@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-theme="dark">
 <head>
 <meta charset="utf-8">
+<meta name="color-scheme" content="dark">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="인사업무 자동화 8종 — 장상범 포트폴리오">
@@ -605,9 +606,7 @@ footer{border-top:1px solid var(--line); padding:3rem 0 4.5rem}
   document.addEventListener('keydown', function(e){ if(e.key==='Escape' && !lb.hidden) close(); });
   document.getElementById('pdfBtn').addEventListener('click', function(){
     var a=document.createElement('a');
-    var t=document.documentElement.getAttribute('data-theme');
-    var dark=t ? t==='dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
-    a.href=dark ? 'portfolio-dark.pdf' : 'portfolio-light.pdf'; a.download='장상범-인사자동화-포트폴리오.pdf';
+    a.href='portfolio-dark.pdf'; a.download='장상범-인사자동화-포트폴리오.pdf';
     document.body.appendChild(a); a.click(); a.remove();
   });
 })();
