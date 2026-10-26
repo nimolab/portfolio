@@ -605,7 +605,9 @@ footer{border-top:1px solid var(--line); padding:3rem 0 4.5rem}
   document.addEventListener('keydown', function(e){ if(e.key==='Escape' && !lb.hidden) close(); });
   document.getElementById('pdfBtn').addEventListener('click', function(){
     var a=document.createElement('a');
-    a.href='portfolio.pdf'; a.download='장상범-인사자동화-포트폴리오(웹).pdf';
+    var t=document.documentElement.getAttribute('data-theme');
+    var dark=t ? t==='dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    a.href=dark ? 'portfolio-dark.pdf' : 'portfolio-light.pdf'; a.download='장상범-인사자동화-포트폴리오.pdf';
     document.body.appendChild(a); a.click(); a.remove();
   });
 })();
